@@ -3,9 +3,8 @@ Claude Architecture &amp; Agents
 
 # Claude Architecture & Agents Assignment
 **Course:** AI Systems & Agentic Workflows  
-**Student:** [Your Name Here]  
-**Student ID:** [Your ID Here]  
-**Date:** [Today's Date]  
+**Student:** Nishant Das    
+**Date:** 16/01/26
 
 ## 📋 Assignment Overview
 This repository contains all tasks for the "Understanding Claude's Architecture and Agent Creation" assignment.
@@ -13,17 +12,17 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 ## ✅ Tasks Completed
 | Task | Description | File |
 |------|-------------|------|
-| **A** | Architecture Write-up | [docs/Task-A.md](docs/Task-A.md) |
-| **B** | .claude.md Configuration | [.claude.md](.claude.md) |
-| **C** | 3 Coding Language Skills | [docs/Task-C.md](docs/Task-C.md) |
-| **D** | Engine Workflow Example | [docs/Task-D.md](docs/Task-D.md) |
-| **E** | Agent Concepts | [docs/Task-E.md](docs/Task-E.md) |
-| **F** | 2 Agent Designs | [docs/Task-F.md](docs/Task-F.md) |
-| **G** | Multi-Agent System | [docs/Task-G.md](docs/Task-G.md) |
+| **A** | Architecture Write-up | 
+| **B** | .claude.md Configuration | 
+| **C** | 3 Coding Language Skills | 
+| **D** | Engine Workflow Example | 
+| **E** | Agent Concepts | 
+| **F** | 2 Agent Designs | 
+| **G** | Multi-Agent System |
 
 ## 📊 Diagrams
-- [Architecture Diagram](images/architecture-diagram.png)
-- [Multi-Agent Diagram](images/multi-agent-diagram.png)
+- [Architecture Diagram]
+- [Multi-Agent Diagram]
 
 
 claude-architecture-agents/
