@@ -280,6 +280,4 @@ Implement automated refactoring
 Enable cross-language optimization
 
 
-## 🔄 **Two Agent Patterns for Language-Centric Work**
 
-### **Pattern 1: Single-Language Specialist Agent**
