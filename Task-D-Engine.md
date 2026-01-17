@@ -48,7 +48,7 @@ CONSTRAINTS IDENTIFIED:
 ## **Step 3: Task Decomposition & Skill Selection**
 
 ENGINE: Breaks down into language-specific subtasks:
-
+```
 TASK DECOMPOSITION TREE:
 └─ Multi-language Audit
 ├─ Python Analysis (skill/python_analyzer)
@@ -68,7 +68,7 @@ TASK DECOMPOSITION TREE:
 ├─ Thread safety analysis
 ├─ Spring framework audit
 └─ Security compliance
-
+```
 SKILL SELECTION RATIONALE:
 • python_analyzer: Best for data science scripts, ML code
 • c_code_auditor: Essential for system-level C code with memory concerns
@@ -269,7 +269,8 @@ Cross-language testing suite
 
 Performance benchmarking
 
-METRICS DASHBOARD
+# METRICS DASHBOARD
+```
 ┌─────────────────┬─────────┬─────────┬─────────┐
 │ Metric │ Python │ C │ Java │
 ├─────────────────┼─────────┼─────────┼─────────┤
@@ -279,8 +280,9 @@ METRICS DASHBOARD
 │ Performance │ 3 ISSUES│ 3 ISSUES│ GOOD │
 │ Documentation │ GOOD │ POOR │ EXCELLENT│
 └─────────────────┴─────────┴─────────┴─────────┘
+```
 
-FINAL OUTPUT TO USER:
+# FINAL OUTPUT TO USER:
 "Multi-language audit completed. Analyzed 45 files across 3 languages.
 Found 1 critical issue (C buffer overflow), 8 major issues.
 Priority recommendations and detailed reports attached.
