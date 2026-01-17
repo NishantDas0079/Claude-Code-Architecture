@@ -394,6 +394,7 @@ Data sanitization: Outputs validated before merging
 
 # WORKFLOW VISUALIZATION
 
+```
 ┌─────────────────────────────────────────────────────┐
 │                 USER REQUEST                         │
 │ "Audit multi-language project"                       │
@@ -444,7 +445,7 @@ Data sanitization: Outputs validated before merging
                │ + Detailed report     │
                └───────────────────────┘
 
-
+```
 
 
 # CHECKLIST: What This Workflow Demonstrates
