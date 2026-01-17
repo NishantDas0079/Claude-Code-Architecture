@@ -25,16 +25,51 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 - [Multi-Agent Diagram]
 
 
-claude-architecture-agents/
-├── .claude.md # Task B
-├── README.md # This file
-├── images/ 
-│ ├── architecture-diagram.png
-│ └── multi-agent-diagram.png
-└── All documentation
-├── Task-A.md # Architecture
-├── Task-C.md # 3 Skills
-├── Task-D.md # Engine Workflow
-├── Task-E.md # Agent Concepts
-├── Task-F.md # 2 Agent Designs
-└── Task-G.md # Multi-Agent System
+
+┌─────────────────────────────────────────────────────────┐
+│ GITHUB REPOSITORY │
+│ "claude-architecture-agents" │
+└───────────────┬──────────────────────────────────────────┘
+│
+┌──────────┴──────────┐
+▼ ▼ ▼
+┌─────────────┐ ┌─────────────┐ ┌─────────────────┐
+│ ROOT │ 
+│ FILES │ │ │ │ │
+│ │ │ • arch- │ │ • Task-A.md │
+│ • README.md◄┼────┤ diagram │ │ • Task-C.md │
+│ • .claude.md│ │ • multi- │ │ • Task-D.md │
+│ │ │ agent │ │ • Task-E.md │
+└─────────────┘ │ diagram │ │ • Task-F.md │
+└─────────────┘ │ • Task-G.md │
+└─────────┬───────┘
+│
+┌─────────────────────────┼─────────────────────────┐
+│ │ │
+┌─────▼──────┐ ┌────▼──────┐ ┌─────▼─────┐
+│ TASK A │ │ TASK C │ │ TASK G │
+│ │ │ │ │ │
+│ Architecture│ │ 3 Skills │ │Multi-Agent│
+│ Flow: │ │ Flow: │ │ Flow: │
+│ User → │ │ Python → │ │Coordinator│
+│ .claude.md │ │ C → Java │ │ → Agents │
+│ → Engine │ │ │ │ → Merge │
+│ → Skills │ │ │ │ → Report │
+│ → Tools │ │ │ │ │
+└─────┬──────┘ └────┬─────┘ └─────┬─────┘
+│ │ │
+└────────────────────────┼────────────────────────┘
+│
+┌──────────▼──────────┐
+│ TASK D & F FLOW │
+│ │
+│ Python Skill → │
+│ Python Agent │
+│ │
+│ C Skill → │
+│ C Agent │
+│ │
+│ Java Skill → │
+│ Java Agent │
+└─────────────────────┘
+
