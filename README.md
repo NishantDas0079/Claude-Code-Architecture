@@ -25,7 +25,7 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 - [Multi-Agent Diagram]
 
 
-
+```
 ┌─────────────────────────────────────────────────────────┐
 │ GITHUB REPOSITORY │
 │ "claude-architecture-agents" │
@@ -71,5 +71,6 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 │ │
 │ Java Skill → │
 │ Java Agent │
+```
 └─────────────────────┘
 
