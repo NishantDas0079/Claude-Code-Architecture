@@ -10,8 +10,8 @@ Claude Architecture &amp; Agents
 This repository contains all tasks for the "Understanding Claude's Architecture and Agent Creation" assignment.
 
 ## ✅ Tasks Completed
-| Task | Description | File |
-|------|-------------|------|
+| Task | Description |
+|------|-------------|
 | **A** | Architecture Write-up | 
 | **B** | .claude.md Configuration | 
 | **C** | 3 Coding Language Skills | 
