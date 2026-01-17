@@ -36,7 +36,7 @@ An agent is a **specialized digital assistant** with expertise in a specific dom
 - Language-specific metrics (e.g., "Python: 95% PEP 8 compliance")
 
 
-
+```
 ┌─────────────────────────────┐
 │ Python Security Agent │
 │ │
@@ -45,7 +45,7 @@ An agent is a **specialized digital assistant** with expertise in a specific dom
 │ • Outputs: Security report │
 │ • Scope: Python code only │
 └─────────────────────────────┘
-
+```
 
 **Example:** "C Memory Safety Agent" that ONLY handles C code memory issues
 
@@ -59,7 +59,7 @@ An agent is a **specialized digital assistant** with expertise in a specific dom
 - Requires coordination for full-stack analysis
 
 ### **Pattern 2: Multi-Language Team with Coordinator**
-
+```
   ┌─────────────────┐
                  │   Code Review   │
                  │   Coordinator   │
@@ -79,7 +79,7 @@ An agent is a **specialized digital assistant** with expertise in a specific dom
 │• Web apps │ │• Embedded │ │• Microsvcs │
 │• Scripting │ │• Performance │ │• Spring │
 └──────────────┘ └──────────────┘ └─────────────┘
-
+```
 
 
 
@@ -163,7 +163,7 @@ Coordinator: Formats and presents to use
 
 
 ### **Pattern 2: Parallel Processing Pipeline**
-
+```
 User: "Audit entire project (Python + C + Java)"
 ↓
 Coordinator: Splits and sends to all three experts
@@ -176,7 +176,7 @@ Coordinator: Splits and sends to all three experts
 └──────────────┼──────────────┘
 ↓
 Coordinator merges all reports
-
+```
 
 ### **Pattern 3: Consultation Chain**
 
