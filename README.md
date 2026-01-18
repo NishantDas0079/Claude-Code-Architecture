@@ -29,6 +29,57 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 
 ## 🏗️ **The 5-Layer Claude Architecture**
 
+## 🏗️ Visual Architecture Overview
+
+```mermaid
+graph TD
+    subgraph "Claude 5-Layer Architecture"
+        A[👤 User Layer<br/>Provides intent & feedback] --> B
+        
+        subgraph B[📋 Configuration Layer]
+            B1[.claude.md<br/>Global Rulebook<br/>• Safety Guidelines<br/>• Tone Rules<br/>• Tool Policies]
+        end
+        
+        B --> C
+        
+        subgraph C[🧠 Engine Layer<br/>Claude Engine]
+            C1[🧩 Task Planner]
+            C2[🔀 Skill Router]
+            C3[✅ Output Validator]
+            C4[💾 State Manager]
+            C1 --> C2 --> C3 --> C4
+        end
+        
+        C --> D
+        C --> E
+        
+        subgraph D[🛠️ Skills Layer]
+            D1[🐍 Python Analyzer<br/>Code review & security]
+            D2[🔧 C Code Auditor<br/>Memory safety & perf]
+            D3[☕ Java Reviewer<br/>Architecture & scaling]
+        end
+        
+        subgraph E[🔧 Tools Layer]
+            E1[📁 File System]
+            E2[💻 Shell/CLI]
+            E3[🌐 Web APIs]
+            E4[📊 Data Processors]
+        end
+        
+        D --> F[🎯 Output to User]
+        E --> F
+        
+        style A fill:#bbdefb,stroke:#1976d2
+        style B fill:#fff9c4,stroke:#f57c00
+        style C fill:#c8e6c9,stroke:#388e3c
+        style D fill:#ffecb3,stroke:#ffa000
+        style E fill:#ffcdd2,stroke:#d32f2f
+        style F fill:#e1bee7,stroke:#7b1fa2
+    end
+```
+**Figure 1:** The 5-layer Claude architecture showing data flow and component interactions
+
+
 Claude-based workflows operate as a layered system where each layer has specific responsibilities. This architecture is reflected in the structure of this repository.
 
 ### **1. `.claude.md` - The Global Rulebook**
