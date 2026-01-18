@@ -26,6 +26,78 @@ This repository contains all tasks for the "Understanding Claude's Architecture 
 - [Multi-Agent Diagram]_(multi-agent.drawio.png)
 
 
+
+## 🏗️ **The 5-Layer Claude Architecture**
+
+Claude-based workflows operate as a layered system where each layer has specific responsibilities. This architecture is reflected in the structure of this repository.
+
+### **1. `.claude.md` - The Global Rulebook**
+**Purpose:** Defines boundaries, reasoning habits, and safety guidelines for all Claude interactions.
+
+**In This Repository:**
+- **File:** `.claude.md` (root directory)
+- **Contents:** Global operating guidelines for SafeTech Corporation
+- **Key Rules:** Tone/style guidelines, reasoning constraints, tool usage policies, safety guardrails
+- **Example Rule:** "Always verify assumptions before proceeding" or "Never delete files without explicit confirmation"
+
+**Why It Matters:** This file acts as the "constitution" that governs how Claude should think and behave across all tasks, ensuring consistency and safety.
+
+### **2. `skill/` - Specialized Capabilities (Dynamic Resources)**
+**Purpose:** Contains reusable "skills" - templates, workflows, or tool wrappers for specific tasks.
+
+**In This Repository:**
+- **Implementation:** The `skills.md` file contains three specialized skills:
+  1. **`python_analyzer`** - For Python code analysis and security
+  2. **`c_code_auditor`** - For C code memory safety and performance
+  3. **`java_enterprise_review`** - For Java architecture and scalability
+- **Each Skill Includes:** Purpose, inputs, outputs, tools used, algorithms, failure modes, and test cases
+
+**Why It Matters:** Skills make Claude more efficient by providing proven patterns for common tasks, reducing errors and improving consistency.
+
+### **3. Claude Engine - The Orchestrator**
+**Purpose:** The core model that interprets intent, decides steps, chooses tools, delegates to sub-agents, and validates outputs.
+
+**In This Repository:**
+- **Documentation:** Described in `Task-D-Engine.md`
+- **Key Responsibilities:**
+  - **Task Planning:** Breaks down complex requests into manageable steps
+  - **Skill Selection:** Chooses appropriate skills for each task
+  - **Tool Coordination:** Manages calls to external tools
+  - **Validation:** Checks outputs for quality and safety
+  - **State Management:** Tracks progress through multi-step workflows
+
+**Example Workflow:** See the 10-step execution trace in `Task-D-Engine.md` where the engine coordinates Python, C, and Java analysis in parallel.
+
+**Why It Matters:** The engine transforms user intent into actionable steps, managing complexity and ensuring proper execution.
+
+### **4. Tools - The Execution Layer**
+**Purpose:** External capabilities that Claude can use to interact with the environment.
+
+**In This Repository:**
+- **Language-Specific Tools:**
+  - **Python:** `pylint`, `bandit`, `black`, `ast` module
+  - **C:** `clang-tidy`, `cppcheck`, `valgrind`
+  - **Java:** `PMD`, `SpotBugs`, `ArchUnit`
+- **General Tools:** File system access, web search, code execution
+
+**Tool Usage Policy:** Defined in `.claude.md` with clear allowed/prohibited actions
+
+**Why It Matters:** Tools extend Claude's capabilities beyond text generation, enabling real-world interactions like file operations, code execution, and web searches.
+
+### **5. User - The Director**
+**Purpose:** Provides intent, constraints, priorities, and feedback to guide the system.
+
+**In This Repository:**
+- **Role:** The ultimate source of goals and validation
+- **Interaction Patterns:** Documented in workflow examples throughout tasks
+- **Feedback Loop:** Essential for refining agent behavior and improving results
+
+**Why It Matters:** The user ensures the system remains aligned with real-world needs and provides the context necessary for effective problem-solving.
+
+---
+
+
+
 ```
 ┌─────────────────────────────────────────────────────────┐
 │ GITHUB REPOSITORY │
