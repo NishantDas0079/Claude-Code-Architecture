@@ -1,5 +1,58 @@
 # Task D: Claude Engine - Multi-Language Code Review Workflow
 
+## ⚙️ Engine Workflow Visualization
+
+```mermaid
+flowchart TD
+    Start([User Request]) --> Parse[Parse Intent<br/>& Classify Task]
+    
+    Parse --> Decision{Multi-Language Task?}
+    
+    Decision -->|Yes| Parallel[Parallel Execution]
+    Decision -->|No| Sequential[Sequential Execution]
+    
+    subgraph Parallel[🏃 Parallel Processing]
+        direction LR
+        P1[🐍 Python Analysis<br/>- Code parsing<br/>- Security scan<br/>- PEP8 check]
+        P2[🔧 C Code Audit<br/>- Memory safety<br/>- Buffer checks<br/>- Performance]
+        P3[☕ Java Review<br/>- Architecture<br/>- Thread safety<br/>- Spring validation]
+    end
+    
+    subgraph Sequential[🚶 Sequential Processing]
+        S1[Step 1: Initial Analysis]
+        S2[Step 2: Deep Dive]
+        S3[Step 3: Validation]
+        S1 --> S2 --> S3
+    end
+    
+    Parallel --> Merge[Merge Results<br/>& Resolve Conflicts]
+    Sequential --> Merge
+    
+    Merge --> Validate[Quality Gates<br/>• Security check<br/>• Performance metrics<br/>• Compliance]
+    
+    Validate --> Report[📋 Generate Unified Report]
+    
+    Report --> Deliver([Deliver to User])
+    
+    %% Error Handling
+    Validate -->|Issues Found| Retry[🔄 Retry/Refine]
+    Retry --> Merge
+    
+    %% Styling
+    style Start fill:#bbdefb,stroke:#1976d2
+    style Parallel fill:#ffecb3,stroke:#ffa000
+    style Sequential fill:#c8e6c9,stroke:#388e3c
+    style Merge fill:#fff9c4,stroke:#f57c00
+    style Validate fill:#ffcdd2,stroke:#d32f2f
+    style Report fill:#e1bee7,stroke:#7b1fa2
+    style Deliver fill:#bbdefb,stroke:#1976d2
+    
+    classDef process fill:#f5f5f5,stroke:#666,stroke-width:2px
+    class Parse,Decision,Parallel,Sequential,Merge,Validate,Report,Retry process
+```
+**Figure 1:** Claude Engine workflow showing parallel and sequential execution paths
+
+
 ## 🎯 **Scenario: "Audit our multi-language project for security and quality issues"**
 
 ### **Complete Execution Trace - 8 Steps**
