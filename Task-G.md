@@ -61,6 +61,82 @@
 ```
 
 
+## 🤝 Multi-Agent Coordination System
+
+```mermaid
+graph TB
+    subgraph "🤖 Agent Team Architecture"
+        User([👤 User/Client]) --> Coordinator
+        
+        subgraph Coordinator[🕴️ Coordinator Agent<br/>Project Manager]
+            C1[📨 Request Receiver]
+            C2[🧩 Task Decomposer]
+            C3[🔀 Agent Router]
+            C4[🧩 Output Merger]
+            C1 --> C2 --> C3 --> C4
+        end
+        
+        Coordinator --> PythonAgent
+        Coordinator --> CAgent
+        Coordinator --> JavaAgent
+        
+        subgraph PythonAgent[🐍 Python Expert Agent<br/>PySecGuard]
+            P1[Security Scanner]
+            P2[ML Model Reviewer]
+            P3[API Security]
+            P4[Data Privacy]
+            P1 --> P2 --> P3 --> P4
+        end
+        
+        subgraph CAgent[🔧 C Expert Agent<br/>CMemGuard]
+            C1[Memory Safety]
+            C2[Buffer Overflow Detector]
+            C3[Performance Optimizer]
+            C4[Hardware Compatibility]
+            C1 --> C2 --> C3 --> C4
+        end
+        
+        subgraph JavaAgent[☕ Java Expert Agent<br/>Enterprise Reviewer]
+            J1[Architecture Analysis]
+            J2[Thread Safety]
+            J3[Spring Framework]
+            J4[Microservices]
+            J1 --> J2 --> J3 --> J4
+        end
+        
+        PythonAgent --> Integration[🔄 Integration Layer<br/>Cross-language validation]
+        CAgent --> Integration
+        JavaAgent --> Integration
+        
+        Integration --> Report[📊 Unified Report Generator]
+        
+        Report --> Deliver([📤 Deliver Final Output])
+        
+        %% Communication Paths
+        PythonAgent -.->|Data Flow| CAgent
+        CAgent -.->|API Calls| JavaAgent
+        
+        %% Feedback Loop
+        Deliver -.->|User Feedback| Coordinator
+    end
+    
+    %% Styling
+    style User fill:#bbdefb,stroke:#1976d2
+    style Coordinator fill:#fff9c4,stroke:#f57c00
+    style PythonAgent fill:#ffecb3,stroke:#ffa000
+    style CAgent fill:#c8e6c9,stroke:#388e3c
+    style JavaAgent fill:#ffcdd2,stroke:#d32f2f
+    style Integration fill:#e1bee7,stroke:#7b1fa2
+    style Report fill:#d1c4e9,stroke:#512da8
+    style Deliver fill:#bbdefb,stroke:#1976d2
+    
+    classDef agentBox fill:#f5f5f5,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    class PythonAgent,CAgent,JavaAgent agentBox
+```
+**Figure 1:** Multi-agent system showing coordinator and specialist agents with integration layer
+
+
+
 
 ---
 
