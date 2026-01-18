@@ -1,5 +1,81 @@
 # Task C: Multi-Language Coding Skills Design
 
+## 🔧 Skills Implementation Architecture
+
+```mermaid
+graph LR
+    subgraph "🧠 Skill Layer Implementation"
+        Input([📥 Input Source<br/>Code/Config/Docs]) --> SkillSelector
+        
+        subgraph SkillSelector[🔄 Skill Router]
+            direction LR
+            LangDetect{Language Detector<br/>Python/C/Java}
+            LangDetect -->|Python| ToPython[Route to Python Skill]
+            LangDetect -->|C| ToC[Route to C Skill]
+            LangDetect -->|Java| ToJava[Route to Java Skill]
+        end
+        
+        ToPython --> PythonSkill
+        ToC --> CSkill
+        ToJava --> JavaSkill
+        
+        subgraph PythonSkill[🐍 Python Analyzer Skill]
+            P1[AST Parser<br/>Syntax tree analysis]
+            P2[Security Scanner<br/>Bandit/SAST tools]
+            P3[Code Quality<br/>PEP8, pylint, black]
+            P4[Performance<br/>Profiling & optimization]
+            P1 --> P2 --> P3 --> P4
+        end
+        
+        subgraph CSkill[🔧 C Code Auditor Skill]
+            C1[Memory Safety<br/>Valgrind, AddressSanitizer]
+            C2[Security Analysis<br/>Buffer overflow detection]
+            C3[Performance Audit<br/>Cache efficiency, profiling]
+            C4[Hardware Compatibility<br/>Architecture validation]
+            C1 --> C2 --> C3 --> C4
+        end
+        
+        subgraph JavaSkill[☕ Java Enterprise Skill]
+            J1[Architecture Review<br/>Layered patterns]
+            J2[Thread Safety<br/>Concurrency analysis]
+            J3[Framework Validation<br/>Spring, Jakarta EE]
+            J4[Performance & Scaling<br/>Load testing]
+            J1 --> J2 --> J3 --> J4
+        end
+        
+        PythonSkill --> OutputMerger[🧩 Unified Output Formatter]
+        CSkill --> OutputMerger
+        JavaSkill --> OutputMerger
+        
+        OutputMerger --> Report[📋 Consolidated Report]
+        
+        Report --> Deliver([📤 Deliver Analysis])
+        
+        %% Tool Integration
+        PythonSkill -.->|Uses| PTools[🐍 Python Tools<br/>pylint, bandit, black]
+        CSkill -.->|Uses| CTools[🔧 C Tools<br/>clang-tidy, cppcheck]
+        JavaSkill -.->|Uses| JTools[☕ Java Tools<br/>PMD, SpotBugs, ArchUnit]
+    end
+    
+    %% Styling
+    style Input fill:#bbdefb,stroke:#1976d2
+    style SkillSelector fill:#fff9c4,stroke:#f57c00
+    style PythonSkill fill:#ffecb3,stroke:#ffa000
+    style CSkill fill:#c8e6c9,stroke:#388e3c
+    style JavaSkill fill:#ffcdd2,stroke:#d32f2f
+    style OutputMerger fill:#e1bee7,stroke:#7b1fa2
+    style Report fill:#d1c4e9,stroke:#512da8
+    style Deliver fill:#bbdefb,stroke:#1976d2
+    style PTools fill:#fff3e0,stroke:#e65100
+    style CTools fill:#e8f5e8,stroke:#1b5e20
+    style JTools fill:#fce4ec,stroke:#880e4f
+    
+    classDef skillBox fill:#fafafa,stroke:#555,stroke-width:1.5px,border-radius:10px
+    class PythonSkill,CSkill,JavaSkill skillBox
+```
+**Figure 1:** Skill layer implementation showing language-specific analysis pipelines
+
+
 ## Skill 1: `skill/python_analyzer`
 ### Purpose
 Comprehensive analysis, review, and optimization for Python codebases
