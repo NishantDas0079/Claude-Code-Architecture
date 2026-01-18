@@ -3,7 +3,83 @@
 
 ## ✅ **TASK F - BUILD 2 AGENTS (PRACTICAL DESIGN - REVISED)**
 
-**File:** `docs/Task-F.md`
+## 🎯 Agent System Architecture
+
+```mermaid
+graph TB
+    subgraph "🤖 Agent Design Patterns"
+        Request([🎯 User Request]) --> AgentType
+        
+        subgraph AgentType{Select Agent Type}
+            Single[Single Agent Pattern<br/>All-in-one solution]
+            Multi[Multi-Agent Pattern<br/>Specialized team]
+        end
+        
+        Single --> SingleAgent
+        
+        subgraph SingleAgent[🦸 Single Specialist Agent]
+            SA1[📋 Receive Full Task]
+            SA2[🧠 Internal Planning]
+            SA3[🛠️ Execute All Steps]
+            SA4[✅ Self-Validation]
+            SA5[📤 Deliver Complete Result]
+            SA1 --> SA2 --> SA3 --> SA4 --> SA5
+        end
+        
+        Multi --> MultiAgent
+        
+        subgraph MultiAgent[👥 Multi-Agent Coordination]
+            direction TB
+            MA1[📋 Coordinator Receives Task]
+            MA2[🧩 Task Decomposition]
+            MA3[🔀 Route to Specialists]
+            
+            subgraph Specialists[Specialist Agents]
+                direction LR
+                Expert1[🐍 Python Expert<br/>Data science & security]
+                Expert2[🔧 C Expert<br/>Memory & performance]
+                Expert3[☕ Java Expert<br/>Enterprise systems]
+            end
+            
+            MA4[🧩 Merge Results]
+            MA5[✅ Quality Gates]
+            MA6[📤 Unified Delivery]
+            
+            MA1 --> MA2 --> MA3 --> Specialists
+            Specialists --> MA4 --> MA5 --> MA6
+        end
+        
+        SingleAgent --> Output1([📄 Single Output])
+        MultiAgent --> Output2([📊 Integrated Output])
+        
+        %% Comparison Metrics
+        subgraph Comparison[📊 Pattern Comparison]
+            C1[Single Agent:<br/>+ Simple<br/>+ Fast for small tasks<br/>- Limited expertise<br/>- Bottleneck risk]
+            C2[Multi-Agent:<br/>+ Deep expertise<br/>+ Parallel processing<br/>+ Fault tolerance<br/>- Coordination overhead]
+        end
+        
+        Output1 -.-> Comparison
+        Output2 -.-> Comparison
+    end
+    
+    %% Styling
+    style Request fill:#bbdefb,stroke:#1976d2
+    style AgentType fill:#fff9c4,stroke:#f57c00
+    style SingleAgent fill:#c8e6c9,stroke:#388e3c
+    style MultiAgent fill:#ffecb3,stroke:#ffa000
+    style Specialists fill:#ffcdd2,stroke:#d32f2f
+    style Output1 fill:#e1bee7,stroke:#7b1fa2
+    style Output2 fill:#d1c4e9,stroke:#512da8
+    style Comparison fill:#f3e5f5,stroke:#4a148c
+    
+    classDef decision fill:#fff3e0,stroke:#e65100,stroke-width:3px
+    class AgentType decision
+    
+    classDef patternBox fill:#fafafa,stroke:#666,stroke-width:2px,stroke-dasharray: 3 3
+    class SingleAgent,MultiAgent patternBox
+```
+**Figure 1:** Comparison of single-agent vs multi-agent design patterns
+
 
 ```
 # Task F: Language-Specialized Agent Designs
